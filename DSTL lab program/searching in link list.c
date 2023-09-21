@@ -9,7 +9,7 @@ void main()
 
     };
     struct node *head,*temp,*newnode;
-    int choice=1,search,i=0;
+    int choice=1,search,i=0,count=1;
     head=0;
     while(choice==1)
     {
@@ -36,19 +36,23 @@ void main()
     while(temp!=0)
     { 
         i++;
-        if(temp->data!=search)
+        if(temp->data==search)
         {
-            
-            temp=temp->next;
-            
-        } 
-        else
-        {
-            printf("element found\n");
-            printf("%d  found at %d position",search,i);
+            count++;
+            printf("%d element is found at %d position",search,i);
             temp=temp->next;
         }
+        else
+        {
+            temp=temp->next;
+        }
+        
+        
 
+    }
+    if(count==1)
+    {
+        printf("element not found");
     }
 
 }
